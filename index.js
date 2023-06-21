@@ -1,4 +1,5 @@
 'use strict'
+//add text to test
 module.exports =  class MongoWrapper {
   constructor(options) {
     this.MongoClient = require('mongodb').MongoClient;
