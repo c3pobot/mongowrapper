@@ -6,6 +6,7 @@ module.exports =  class MongoWrapper {
     this.url = options.url;
     this.appDb = options.appDb;
     this.mongo;
+    this.log = options.logger
     this.dbo
     this.mongoReady = false
     this.compression = true
@@ -42,7 +43,7 @@ module.exports =  class MongoWrapper {
     if(!msg) msg = 'MongoError'
     msg += '\n'
     msg += 'Request : '+cmd+'\n'
-    if(collection) msg += 'collection\n'
+    if(collection) msg += collection+'\n'
     if(matchCondition) msg += JSON.stringify(matchCondition)+'\n'
     if(e?.code) msg += 'Code : '+e.code+'\n'
     if(e?.message) msg += e.message+'\n'
